@@ -13,13 +13,13 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Execute Cowsay CMD
-          run: cowsay -f dragon "Run for cover, I feel a sneeze coming on." >> dragon.txt     
+          run: cowsay -f dragon "Run for cover, I am a DRAGON." >> dragon.txt     
         
         - name: Sleep 5 sec
           run: sleep 5
 
-        # - name: Test file exists
-        #   run: grep -i dragon dragon.txt
+        - name: Test file exists
+          run: grep -i dragon dragon.txt
 
         - name: Read file
           run: cat dragon.txt
