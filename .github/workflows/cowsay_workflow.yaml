@@ -1,0 +1,26 @@
+name: Generate ASCII Artwork
+
+on: workflow_dispatch
+
+jobs:
+    ascci_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+
+        - name: Install Cowsay Package
+          run: sudo apt-get install cowsay -y
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon "Run for cover, I feel a sneeze coming on." >> dragon.txt     
+        
+        - name: Test file exists
+          run: grep -i dragon dragon.txt
+
+        - name: Read file
+          run: cat dragon.txt
+
+        - name: List and Read files
+          run: ls -ltra
+
