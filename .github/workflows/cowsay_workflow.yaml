@@ -15,9 +15,6 @@ jobs:
         - name: Execute Cowsay CMD
           run: cowsay -f dragon "Run for cover, I am a DRAGON." >> dragon.txt     
 
-        - name: Execute Cowsay CMD
-          run: cowsay -f tiger "Run for cover, I am a TIGER." >> tiger.txt 
-          
         - name: Sleep 5 sec
           run: sleep 5
 
@@ -27,7 +24,7 @@ jobs:
         - name: Read files
           run: |
             cat dragon.txt
-            cat tiger.txt
+            cat README.md
 
         - name: List and Read files
           run: ls -ltra
