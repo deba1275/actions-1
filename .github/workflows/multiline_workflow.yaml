@@ -1,0 +1,16 @@
+name: Multiline workflow
+
+on: workflow_dispatch
+
+jobs:
+    multiline_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+
+        - name: List and Read files
+          run: |
+            echo "my first github action job"
+            ls -ltra
+            cat README.md
