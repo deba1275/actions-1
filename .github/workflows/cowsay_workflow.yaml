@@ -15,6 +15,9 @@ jobs:
         - name: Execute Cowsay CMD
           run: cowsay -f dragon "Run for cover, I feel a sneeze coming on." >> dragon.txt     
         
+        - name: Sleep 5 sec
+          run: sleep 10
+          
         - name: Test file exists
           run: grep -i dragon dragon.txt
 
