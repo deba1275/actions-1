@@ -21,8 +21,8 @@ jobs:
         # - name: Test file exists
         #   run: grep -i dragon dragon.txt
 
-        # - name: Read file
-        #   run: cat dragon.txt
+        - name: Read file
+          run: cat dragon.txt
 
         - name: List and Read files
           run: ls -ltra
