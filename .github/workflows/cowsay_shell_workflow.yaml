@@ -12,6 +12,9 @@ jobs:
         - name: List the files
           run: ls -ltra
 
+        - name: Change script permission 
+          run: chmod +x ./cowsay.sh
+          
         - name: Executing Shell Script
           run: ./cowsay.sh
 
