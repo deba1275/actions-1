@@ -15,6 +15,9 @@ jobs:
     - name: Execute Cowsay CMD
       run: cowsay -f dragon "Run for cover, I am a DRAGON." >> dragon.txt     
 
+    - name: List files 
+      run: ls -ltr
+      
     - name: Upload the Artifact
       uses: actions/upload-artifact@v4
       with:
