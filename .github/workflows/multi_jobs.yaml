@@ -1,0 +1,40 @@
+name: Generate ASCII Artwork - Multi Jobs
+
+on: workflow_dispatch
+
+jobs:
+  build_job_1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - name: Install Cowsay Package
+      run: sudo apt-get install cowsay -y
+
+    - name: Execute Cowsay CMD
+      run: cowsay -f dragon "Run for cover, I am a DRAGON." >> dragon.txt     
+
+    - name: Sleep 20 sec
+      run: sleep 20
+
+  test_job_1:
+    needs: build_job_1
+    runs-on: ubunti-latest
+    steps:
+    - name: Test file exists
+      run: grep -i dragon dragon.txt
+
+
+  deploy_job_1:
+    needs: [test_job_1]
+    runs-on: ubunti-latest
+    steps:
+
+    - name: Read files
+      run: |
+          cat dragon.txt
+          cat README.md        
+    
+    - name: List and Read files
+      run: ls -ltra
