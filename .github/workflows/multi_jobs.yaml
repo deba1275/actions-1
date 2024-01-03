@@ -33,6 +33,9 @@ jobs:
     - name: Test file exists
       run: grep -i dragon dragon.txt
 
+    - name: List files 
+      run: ls -ltr
+
   deploy_job_1:
     needs: [test_job_1]
     runs-on: ubuntu-latest
