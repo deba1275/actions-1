@@ -50,8 +50,7 @@ jobs:
 
     - name: Read files
       run: |
-          cat dragon.txt
-          cat README.md        
+          cat dragon.txt   
     
     - name: List and Read files
       run: ls -ltra
