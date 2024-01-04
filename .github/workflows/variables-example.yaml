@@ -1,0 +1,34 @@
+name: Exploring variables
+
+on: workflow_dispatch
+
+env:
+  WORKFLOW_VAR: workflow-var
+
+jobs:
+  job1:
+    env:
+      JOB1_VAR: job1-var
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step1 Variables
+      env:
+        STEP1_VAR: step1-var
+      run: echo $STEP1_VAR 
+
+    - name: Step2 Variables
+      env:
+        STEP2_VAR: step2-var
+      run: echo {{ env.STEP2_VAR }}
+
+    - name: Job Variables
+      run: echo {{ env.JOB1_VAR }}
+
+    - name: Workflow variables in Job1
+      run: echo {{ env.WORKFLOW_VAR }} in job1
+      
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Workflow variables in Job2
+      uses: echo {{ env.WORKFLOW_VAR }} in job2
