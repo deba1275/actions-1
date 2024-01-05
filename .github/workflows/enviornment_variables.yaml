@@ -2,8 +2,9 @@ name: Exploring enviornment variable
 
 on: workflow_dispatch
 
-# env:
-#   WORKF_VAR: workf-var
+env:
+   WORKF_VAR: workf-var
+
 jobs:
   job1:
     env:
@@ -23,8 +24,8 @@ jobs:
     - name: Job Variables
       run: echo ${{ env.JOB1_VAR }}
 
-    # - name: Workflow variables in Job1
-    #   run: echo {{ env.WORKF_VAR }} in job1
+    - name: Workflow variables in Job1
+      run: echo ${{ env.WORKF_VAR }} in job1
       
 #   job2:
 #     runs-on: ubuntu-latest
