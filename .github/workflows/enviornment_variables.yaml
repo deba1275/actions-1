@@ -18,7 +18,7 @@ jobs:
     - name: Step2 Variables
       env:
         STEP2_VAR: step2-var
-      run: echo {{ env.STEP2_VAR }}
+      run: echo {{env.STEP2_VAR}}
 
     # - name: Job Variables
     #   run: echo {{ env.JOB1_VAR }}
