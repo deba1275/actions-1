@@ -32,4 +32,4 @@ jobs:
     needs: job1
     steps:
     - name: Workflow variables in Job2
-      uses: echo $WORKF_VAR in job2
+      uses: echo WORKF_VAR in job2
