@@ -9,7 +9,7 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
 
-    - name: List the files
+    - name: List files
       run: ls -ltra
 
     # - name: Change script permission 
