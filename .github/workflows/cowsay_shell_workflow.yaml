@@ -1,6 +1,6 @@
 name: Shell Script Workflow test
 
-on: push
+on: workflow_dispatch
 
 jobs:
   shell_job:
