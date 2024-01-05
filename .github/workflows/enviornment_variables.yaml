@@ -32,4 +32,4 @@ jobs:
     needs: job1
     steps:
     - name: Workflow variables in Job2
-      uses: echo variable in job2
+      run: echo ${{ env.WORKF_VAR }} in job2 is ${{env.WORKF_VAR}}
