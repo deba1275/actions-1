@@ -1,4 +1,4 @@
-name: Shell Script Test Workflow
+name: Shell Script Workflow test
 
 on: push
 
