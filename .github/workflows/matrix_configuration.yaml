@@ -15,6 +15,7 @@ jobs:
 
   deploy-on-window:
     runs-on: windows-latest
+    needs: deploy-on-ubuntu
     steps:
     - name: Echo Docker Detaails
       run: docker info
