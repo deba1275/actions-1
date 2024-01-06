@@ -38,6 +38,8 @@ jobs:
       group: prod-deployment 
       cancel-in-progress: true 
     # if cancel-in-progress:false then existing running jobs will not cancel but new one will wait for current job to get completed.
+    timeout-minutes: 1
+    # timeout-minutes: 1 will cancel the any jobs running morethan 1 min
     steps:
     - name: Workflow variables in Job2
       run: echo ${{ env.WORKF_VAR }} in job2 is ${{env.WORKF_VAR}}
