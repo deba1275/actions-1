@@ -26,6 +26,9 @@ jobs:
 
     - name: Workflow variables in Job1
       run: echo ${{ env.WORKF_VAR }} in job1 is ${{ env.WORKF_VAR }}
+    
+    - name: Repository Secret
+      run: echo Secret from repo is ${{ secrets.REPO_SECRET }}
       
   job2:
     runs-on: ubuntu-latest
@@ -33,3 +36,6 @@ jobs:
     steps:
     - name: Workflow variables in Job2
       run: echo ${{ env.WORKF_VAR }} in job2 is ${{env.WORKF_VAR}}
+
+    - name: Repository Variable
+      run: echo Repository variable is ${{ vars.REPO_VAR }}
