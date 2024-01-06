@@ -1,12 +1,13 @@
 name: Exploring enviornment variable
-
+# wokflow lavel variable for all Jobs within single workflow
 env:
   WORKF_VAR: workf-var
 
 on: workflow_dispatch
 
 jobs:
-  job1:
+  build:
+    # 
     env:
       JOB1_VAR: job1-var
     runs-on: ubuntu-latest
@@ -30,12 +31,13 @@ jobs:
     - name: Repository Secret
       run: echo Secret from repo is ${{ secrets.REPO_SECRET }}
       
-  job2:
+  deploy:
     runs-on: ubuntu-latest
-    needs: job1
+    needs: build
     concurrency:
       group: prod-deployment 
-      cancel-in-progress: true
+      cancel-in-progress: true 
+    # if cancel-in-progress:false then existing running jobs will not cancel but new one will wait for current job to get completed.
     steps:
     - name: Workflow variables in Job2
       run: echo ${{ env.WORKF_VAR }} in job2 is ${{env.WORKF_VAR}}
