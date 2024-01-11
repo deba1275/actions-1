@@ -37,6 +37,7 @@ jobs:
     concurrency:
       group: prod-deployment 
       cancel-in-progress: true 
+    # Cancel the in progress job  
     # if cancel-in-progress:false then existing running jobs will not cancel but new one will wait for current job to get completed.
     timeout-minutes: 1
     # timeout-minutes: 1 will cancel the any jobs running morethan 1 min
