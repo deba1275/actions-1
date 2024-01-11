@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Echo Docker Detaails
       run: docker info
-    - name: Run Image ${{ matrix.images }}
+    - name: Running Image on ${{ matrix.os }}
       run: docker run ${{ matrix.images }}
 
   ## Below Jobs will be taken care by matrix strategy as coded above
